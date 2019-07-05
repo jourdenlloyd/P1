@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="us-en">
+
+<head>
+<meta charset="UTF-8">
+<!-- Fix the favicon before launch -->
+<link rel='shortcut icon' href='./favicon.ico' type='image/png'>
+<meta name="author" content="Jourden Lloyd">
+<meta name="description" content="Reimbursement form for Project 1">
+<!-- This makes the page scale to 100% screen with depending on the device's dimensions. Good for responsive design. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- This is how to access Bootstrap style sheet -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<!-- This custom css page doesn't do anything right now, but if I get ahead on the project, I'll go back to it -->
+
+<title>Tuition Reimbursement Form</title>
+</head>
+
+<body>
+	<!-- navbar -->
+	<div class="container min-vw-100">
+		<nav class="navbar sticky-top navbar-success bg-success p-3">
+			<a href="home.html" class="badge badge-light">LL</a><span><a href="rbform.html" class="btn btn-dark" role="button">
+					<strong>Submit Forms</strong>
+			</a></span> <a href="updateforms.html" class="btn btn-info" role="button"> <strong>Update
+					Forms</strong>
+			</a> <span><a href="viewallforms.html" class="btn btn-warning text-white"
+				role="button"> <strong>View Forms</strong>
+			</a></span><span><a href="login.html" class="btn btn-danger"
+				role="button"> <strong>Logout</strong>
+			</a></span><span><a
+					class="navbar-brand mb-0 h1">Lloyd & Co</a></span>
+		</nav>
+	</div>
+	<!-- form starts -->
+	<div class="container w-75 p-4 flex-fill bg-light"
+		.bg-light
+		$enable-responsive-font-sizes="true">
+		<form class="form" action="rbform" method="post">
+			<h2 class="form-heading">Lloyd's Tuition Reimbursement Form</h2>
+			<!-- Probably don't need first name, last name, or email because that's part of the user -->
+			<div class="form-group">
+				<div class="row">
+					<div class="col">
+						<p>First name</p>
+						<input name="firstname" type="text" class="form-control"
+							placeholder="First name">
+					</div>
+					<div class="col">
+						<p>Last name</p>
+						<input name="lastname" type="text" class="form-control"
+							placeholder="Last name">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-6">
+							<label for="employeeEmail">Username</label> <input
+								name="username" type="email" class="form-control"
+								id="employeeInputEmail" aria-describedby="emailHelp"
+								placeholder="yourname@lloydco.com">
+						</div>
+						<div class="col-md-6">
+							<label for="inlineFormCustomSelect">Event type</label> <select
+								name="eventtype" class="custom-select mr-sm-2"
+								id="inlineFormCustomSelect">
+								<option selected>Choose...</option>
+								<option>University Course: 80%</option>
+								<option>Seminar: 60%</option>
+								<option>Certification Prep Course: 75%</option>
+								<option>Certification: 100%</option>
+								<option>Technical Training: 90%</option>
+								<option>Other: 30%</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<p>Event date</p>
+						<input name="eventdate" class="form-control" type="text"
+							placeholder="mm/dd/yy">
+					</div>
+					<div class="col-md-6">
+						<p>Event time</p>
+						<select name="eventtime" class="custom-select mr-sm-2">
+							<option>Time...</option>
+							<option>7:00a</option>
+							<option>8:00a</option>
+							<option>9:00a</option>
+							<option>10:00a</option>
+							<option>11:00a</option>
+							<option>12:00p</option>
+							<option>1:00p</option>
+							<option>2:00p</option>
+							<option>3:00p</option>
+							<option>4:00p</option>
+							<option>5:00p</option>
+							<option>6:00p</option>
+							<option>7:00p</option>
+							<option>8:00p</option>
+							<option>9:00p</option>
+							<option>10:00p</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputAddress">Event Address</label> <input
+					name="eventaddress" type="text" class="form-control"
+					id="inputAddress" placeholder="1234 Main St">
+			</div>
+			<div class="form-group">
+				<label for="exampleFormControlTextarea1">Event description</label>
+				<textarea name="eventdescription" class="form-control"
+					id="exampleFormControlTextarea1" rows="1.5"
+					placeholder="Name of event, subject area etc."></textarea>
+			</div>
+			<div class="row justify-content-between">
+				<div class="col-4">
+					<p>Event cost</p>
+				</div>
+				<div class="col-3">
+					<p>Grading format</p>
+				</div>
+				<div class="col-3">
+					<p>Passing grade</p>
+				</div>
+			</div>
+			<div class="input-group col mb-3">
+				<div class="input-group-prepend-sm">
+					<span class="input-group-text">$</span>
+				</div>
+				<input name="eventcost" type="text" class="form-control"
+					aria-label="Amount (to the nearest dollar)"
+					placeholder="Subject to standard reimbursement coverage">
+				<div class="input-group-append-sm">
+					<span class="input-group-text">.00</span>
+				</div>
+				<div class="input-group col-4 mb-3">
+					<select name="gradingformat" class="custom-select custom-select">
+						<option selected>Grading format</option>
+						<option>A-F</option>
+						<option>%/100</option>
+						<option>Pass/Fail: default</option>
+						<option>Other</option>
+					</select>
+				</div>
+
+				<div class="input-group col-3 mb-3">
+					<select name="passinggrade" class="custom-select custom-select">
+						<option selected>Passing grade</option>
+						<option>A</option>
+						<option>B</option>
+						<option>C</option>
+						<option>D</option>
+						<option>90%+</option>
+						<option>80%+</option>
+						<option>70%+</option>
+						<option>60%+</option>
+						<option>Pass: default</option>
+						<option>Other</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleFormControlTextarea1">Work-related
+					justification</label>
+				<textarea name="workjustification" class="form-control"
+					id="exampleFormControlTextarea1" rows="2"
+					placeholder="How and why will this event help you become better at your job?"></textarea>
+			</div>
+			<!-- form ends -->
+			<div>
+				<br>
+			</div>
+			<button type="submit" class="btn btn-success btn-block"
+				aria-pressed="true">Submit</button>
+		</form>
+		<br>
+		<div>
+			<footer class="footer">
+				<div class="container min-vw-100 text-dark" .bg-light>
+					<p class="text-muted">Copyright© Lloyd&Co 2019.</p>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
